@@ -10,36 +10,93 @@
             margin: 0;
             padding: 0;
         }
+        
+        #blocker {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(244, 244, 0, 0.331);
+        }
+        
+        #instructions {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
     </style>
 
 </head>
 
 <body>
+    <div id="blocker">
+        <div id="instructions">
+            <p style="font-size:36px">
+                Click to play
+            </p>
+            <p>
+                Move: WASD<br/> Look: MOUSE
+            </p>
+        </div>
+    </div>
     <script src="three.min.js"></script>
     <script src="GLTFLoader.js"></script>
+    <script src="PointerLockControls.js"></script>
     <script>
         var camera, scene, renderer;
         scene = new THREE.Scene();
+        scene.fog = new THREE.Fog(0xffffff, 0, 750);
         camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
-        camera.position.set(0, 4, 10);
-        camera.add(new THREE.PointLight(0xffffff, 5));
+        camera.position.set(30, 4, 40);
+        camera.add(new THREE.PointLight(0xffffff, 1));
         renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
+
+        var controls = new THREE.PointerLockControls(camera, document.body); //mouse control
+        const blocker = document.getElementById('blocker');
+        const instructions = document.getElementById('instructions');
+
+        instructions.addEventListener('click', function() {
+
+            controls.lock();
+
+        });
+
+        controls.addEventListener('lock', function() {
+
+            instructions.style.display = 'none';
+            blocker.style.display = 'none';
+
+        });
+
+        controls.addEventListener('unlock', function() {
+
+            blocker.style.display = 'block';
+            instructions.style.display = '';
+
+        });
+
+        scene.add(controls.getObject());
 
         const light = new THREE.AmbientLight(0xffffff);
         scene.add(light);
 
         const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
-        directionalLight.castShadow = true
-        scene.add(directionalLight)
-        directionalLight.position.set(0, 10, 10)
+        directionalLight.castShadow = true;
+        scene.add(directionalLight);
+        directionalLight.position.set(0, 10, 10);
 
         var loader = new THREE.GLTFLoader();
         loader.load("./maze/maze.gltf", function(gltf) {
             scene.add(gltf.scene);
             gltf.scene.scale.set(10, 5, 10);
-            gltf.scene.rotate(-Math.PI / 2);
+            gltf.scene.rotateY(-Math.PI / 2);
         });
 
         function animate() {
@@ -48,7 +105,6 @@
             update();
         }
         animate();
-
         var directionEvent;
         var pressed = false;
 
@@ -56,9 +112,9 @@
             const moveDistance = 0.1;
             if (pressed) {
                 if (directionEvent.keyCode == 37) {
-                    camera.rotation.y += moveDistance;
+                    camera.translateX(-moveDistance);
                 } else if (directionEvent.keyCode == 39) {
-                    camera.rotation.y -= moveDistance;
+                    camera.translateX(+moveDistance);
                 } else if (directionEvent.keyCode == 40) {
                     camera.translateZ(moveDistance);
                 } else if (directionEvent.keyCode == 38) {
@@ -66,7 +122,6 @@
                 }
             }
         }
-
         window.addEventListener("keyup", onkeyup, false) //event listener listening for the player
         window.addEventListener("keydown", onkeydown, false);
 
@@ -81,6 +136,7 @@
             pressed = false;
             directionEvent = event;
         }
+
 
         window.addEventListener("resize", onWindowResize, false);
 
