@@ -21,7 +21,7 @@
         var camera, scene, renderer;
         scene = new THREE.Scene();
         camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
-        camera.position.set(0, 2, 10);
+        camera.position.set(0, 4, 10);
         camera.add(new THREE.PointLight(0xffffff, 5));
         renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -30,10 +30,16 @@
         const light = new THREE.AmbientLight(0xffffff);
         scene.add(light);
 
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
+        directionalLight.castShadow = true
+        scene.add(directionalLight)
+        directionalLight.position.set(0, 10, 10)
+
         var loader = new THREE.GLTFLoader();
         loader.load("./maze/maze.gltf", function(gltf) {
             scene.add(gltf.scene);
-            /*gltf.scene.scale.set(.5, .5, .5);*/
+            gltf.scene.scale.set(10, 5, 10);
+            gltf.scene.rotate(-Math.PI / 2);
         });
 
         function animate() {

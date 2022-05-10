@@ -44,13 +44,13 @@
         -1.0,
         0.0,
         0.0,
-        -1.0
+        1.0
       ],
       "min": [
         -1.0,
         0.0,
         0.0,
-        -1.0
+        1.0
       ]
     },
     {
@@ -69,7 +69,7 @@
     },
     {
       "bufferView": 4,
-      "componentType": 5125,
+      "componentType": 5121,
       "count": 600,
       "type": "SCALAR",
       "max": [
@@ -120,13 +120,13 @@
         0.0,
         0.0,
         1.0,
-        -1.0
+        1.0
       ],
       "min": [
         -1.0,
         0.0,
         -1.0,
-        -1.0
+        1.0
       ]
     },
     {
@@ -150,16 +150,16 @@
       "type": "VEC2",
       "max": [
         0.9966580867767334,
-        0.65283584594726563
+        0.99594426155090332
       ],
       "min": [
         0.0040557663887739182,
-        0.0040557663887739182
+        0.34716415405273438
       ]
     },
     {
       "bufferView": 10,
-      "componentType": 5125,
+      "componentType": 5121,
       "count": 36,
       "type": "SCALAR",
       "max": [
@@ -171,13 +171,12 @@
     }
   ],
   "asset": {
-    "generator": "Plattar UnityGLTF (2021.3.1f1)",
     "version": "2.0"
   },
   "buffers": [
     {
       "uri": "maze.bin",
-      "byteLength": 9696
+      "byteLength": 7788
     }
   ],
   "bufferViews": [
@@ -203,46 +202,46 @@
     {
       "buffer": 0,
       "byteOffset": 5808,
-      "byteLength": 2400
+      "byteLength": 600
     },
     {
       "buffer": 0,
-      "byteOffset": 8208,
+      "byteOffset": 6408,
       "byteLength": 288
     },
     {
       "buffer": 0,
-      "byteOffset": 8496,
+      "byteOffset": 6696,
       "byteLength": 288
     },
     {
       "buffer": 0,
-      "byteOffset": 8784,
+      "byteOffset": 6984,
       "byteLength": 384
     },
     {
       "buffer": 0,
-      "byteOffset": 9168,
+      "byteOffset": 7368,
       "byteLength": 192
     },
     {
       "buffer": 0,
-      "byteOffset": 9360,
+      "byteOffset": 7560,
       "byteLength": 192
     },
     {
       "buffer": 0,
-      "byteOffset": 9552,
-      "byteLength": 144
+      "byteOffset": 7752,
+      "byteLength": 36
     }
   ],
   "images": [
     {
-      "uri": "grass texture.jpg",
+      "uri": "grass%20texture.png",
       "name": "grass texture"
     },
     {
-      "uri": "wall texture.jpg",
+      "uri": "wall%20texture.png",
       "name": "wall texture"
     }
   ],
@@ -250,12 +249,19 @@
     {
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 0
+          "index": 0,
+          "extensions": {
+            "KHR_texture_transform": {
+              "scale": [
+                10.0,
+                10.0
+              ]
+            }
+          }
         },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.5
       },
-      "doubleSided": true,
       "name": "grass texture"
     },
     {
@@ -264,17 +270,19 @@
           "index": 1,
           "extensions": {
             "KHR_texture_transform": {
+              "offset": [
+                1.0,
+                -1.0
+              ],
               "scale": [
-                10.0,
-                2.0
+                5.0,
+                10.0
               ]
             }
           }
         },
-        "metallicFactor": 0.0,
-        "roughnessFactor": 0.5
+        "metallicFactor": 0.0
       },
-      "doubleSided": true,
       "name": "wall texture"
     }
   ],
@@ -978,7 +986,7 @@
       ],
       "translation": [
         -3.43680978,
-        -0.166243911,
+        -0.305244,
         0.202531338
       ],
       "name": "Cube (28)"
@@ -1585,9 +1593,7 @@
     }
   ],
   "samplers": [
-    {
-      "minFilter": 9729
-    }
+    {}
   ],
   "scene": 0,
   "scenes": [
