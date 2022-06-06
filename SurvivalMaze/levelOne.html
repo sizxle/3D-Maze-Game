@@ -1251,8 +1251,8 @@
             });
             let spikeGeometry = new THREE.Mesh(boxgeo, materialGeo);
 
-            spikeGeometry.position.copy(spikebody4.position);
-            spikeGeometry.quaternion.copy(spikebody4.quaternion);
+            spikeGeometry.position.copy(spikebody2.position);
+            spikeGeometry.quaternion.copy(spikebody2.quaternion);
             scene.add(spikeGeometry);
 
         }
@@ -1295,6 +1295,41 @@
 
 
             }
+            sphereBody.addEventListener("collide", function(e) {
+                var contact = e.contact;
+                console.log(contact.bj.id);
+
+                if (contact.bj.id > 39 && contact.bj.id < 90) {
+                    sphereBody.position.set(-2, 3, 53);
+                    sphereBody.velocity.set(0, 0, 0);
+                    controls.getObject().rotation.y = 0;
+                    //sphereBody.quaternion.set(0 , 0 , 0 );
+                    //console.log(true , sphereBody.position , sphereBody.velocity)
+                    clearInterval(interval);
+                    document.getElementById('count').innerHTML = 'GAME OVER';
+                    // or...
+                    //alert("GAME OVER BABA");
+                    //over.style.display = '';
+                    blocker.style.display = '-webkit-box';
+                    blocker.style.display = '-moz-box';
+                    blocker.style.display = 'box';
+
+                    gameover.style.display = '';
+                    controls.enabled = false;
+                    let reloader = 3;
+                    let relo = setInterval(function() {
+                        reloader--
+                        if (reloader === 0) {
+                            location.reload();
+                        }
+                    }, 1000);
+
+                }
+                // contact.bi and contact.bj are the colliding bodies, and contact.ni is the collision normal.
+                // We do not yet know which one is which! Let's check.
+            });
+
+
 
             controls.update(Date.now() - time);
             renderer.render(scene, camera);
