@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>3D GAME MENU</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <style>
+        body {
+            /* background-color: #000; */
+            background-image: url('GAME.png');
+        }
+        
+        .container {
+            height: 200px;
+            position: relative;
+        }
+        
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 200%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        
+        #main {
+            width: 180px;
+            height: 224px;
+            background-color: #272727;
+            border: 1px solid #237caa;
+        }
+        
+        #elem {
+            width: 150px;
+            height: 40px;
+            background-color: #272727;
+            border: 1px solid #237caa;
+            color: #237caa;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 40px;
+            font-family: 'Orbitron', sans-serif;
+            cursor: hand;
+            display: block;
+            margin: 0 0 0.25em;
+            border-bottom-right-radius: 25px 25px;
+        }
+        
+        #elem:active {
+            background-color: #237caa;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <script></script>
+
+    <div class="container">
+        <div class="center">
+            <button type="button" id="elem" onclick="window.location.href=''">First Person</button>
+            <button type="button" id="elem" onclick="window.location.href=''">3rd Person</button>
+            <br>
+            <button type="button" id="elem" onclick="window.location.href='../index.html'">EXIT</button>
+
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
