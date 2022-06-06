@@ -86,12 +86,12 @@ var PointerLockControls = function(camera, cannonBody) {
 
             case 32: // space
 
-                if (cannonBody.position.y > 3.5 && cannonBody.position.y < 10) {
-                    //don't do anything
-                } else {
-                    velocity.y = jumpVelocity;
-                }
-                // velocity.y = jumpVelocity; 
+                // if (cannonBody.position.y > 3.5 && cannonBody.position.y < 10) {
+                //     //don't do anything
+                // } else {
+                //     velocity.y = jumpVelocity;
+                // }
+                velocity.y = jumpVelocity; 
 
                 break;
         }

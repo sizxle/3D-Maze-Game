@@ -238,7 +238,7 @@
                 mass: mass
             });
             sphereBody.addShape(sphereShape);
-            sphereBody.position.set(-2, 5, 53);
+            sphereBody.position.set(-3, 20, 40);
             sphereBody.linearDamping = 0.9;
             world.addBody(sphereBody);
 
@@ -759,6 +759,501 @@
                 }
             });
 
+            const texture = new THREE.TextureLoader().load(
+                'metallic.jpg');
+            var spikes = new THREE.Object3D();
+            const Geometryspike1 = new THREE.TetrahedronGeometry(0.2, 0);
+            const materialspike1 = new THREE.MeshBasicMaterial({
+                //color: 0xff0080,
+                //wireframe: true,
+                map: texture
+            });
+            const spike1 = new THREE.Mesh(Geometryspike1, materialspike1);
+
+
+            const spike2 = spike1.clone();
+            const spike3 = spike1.clone();
+            spike3.position.set(0, 0, 1);
+            spike2.position.set(0, 0, 1.4);
+            spike1.position.set(0, 0, 1.8);
+            spikes.add(spike1);
+            spikes.add(spike2);
+            spikes.add(spike3);
+
+            let clonnedspikes1 = spikes.clone();
+            let clonnedspikes2 = spikes.clone();
+            let clonnedspikes3 = spikes.clone();
+            let clonnedspikes4 = spikes.clone();
+            let clonnedspikes5 = spikes.clone();
+            let clonnedspikes6 = spikes.clone();
+            let clonnedspikes7 = spikes.clone();
+
+
+            spikes.position.set(2.0, 0.1, -1.5);
+            clonnedspikes1.position.set(1.5, 0.1, -1.5);
+            clonnedspikes2.position.set(1.0, 0.1, -1.5);
+            clonnedspikes3.position.set(0.5, 0.1, -1.5);
+            clonnedspikes4.position.set(0, 0.1, -1.5);
+            clonnedspikes5.position.set(-0.5, 0.1, -1.5);
+            clonnedspikes6.position.set(-1, 0.1, -1.5);
+            clonnedspikes7.position.set(-1.5, 0.1, -1.5);
+
+            let clonnedSpikes = new THREE.Object3D();
+            clonnedSpikes.name = "spikes";
+            clonnedSpikes.add(spikes);
+            clonnedSpikes.add(clonnedspikes1);
+            clonnedSpikes.add(clonnedspikes2);
+            clonnedSpikes.add(clonnedspikes3);
+            clonnedSpikes.add(clonnedspikes4);
+            clonnedSpikes.add(clonnedspikes5);
+            clonnedSpikes.add(clonnedspikes6);
+            clonnedSpikes.add(clonnedspikes7);
+            clonnedSpikes.position.set(-1.5, 0.19999598662591353, 45)
+
+
+            let spikesObject2 = clonnedSpikes.clone();
+            let spikesObject3 = clonnedSpikes.clone();
+            let spikesObject4 = clonnedSpikes.clone();
+            let spikesObject5 = clonnedSpikes.clone();
+            let spikesObject6 = clonnedSpikes.clone();
+
+
+            spikesObject6.children[0].position.x = 0.0;
+            spikesObject6.children[0].position.z = -0.2;
+            spikesObject6.children[1].position.x = 0.0;
+            spikesObject6.children[1].position.z = 1;
+            spikesObject6.children[1].position.z = -2.7;
+            spikesObject6.children[2].position.x = 0.0;
+            spikesObject6.remove(spikesObject6.children[3])
+            spikesObject6.remove(spikesObject6.children[3])
+            spikesObject6.remove(spikesObject6.children[3])
+            spikesObject6.remove(spikesObject6.children[3])
+            spikesObject6.remove(spikesObject6.children[3])
+            spikesObject6.remove(spikesObject6.children[3])
+
+            let spikesObject7 = spikesObject6.clone();
+            let spikesObject8 = spikesObject6.clone();
+            let spikesObject9 = spikesObject6.clone();
+            let spikesObject10 = spikesObject6.clone();
+            let spikesObject11 = spikesObject6.clone();
+            let spikesObject12 = spikesObject6.clone();
+            let spikesObject13 = clonnedSpikes.clone();
+            let spikesObject14 = clonnedSpikes.clone();
+            let spikesObject15 = spikesObject6.clone();
+            let spikesObject16 = spikesObject6.clone();
+            let spikesObject17 = spikesObject6.clone();
+            let spikesObject18 = spikesObject6.clone();
+            let spikesObject19 = spikesObject6.clone();
+            let spikesObject20 = spikesObject6.clone();
+            let spikesObject21 = spikesObject6.clone();
+            let spikesObject22 = spikesObject6.clone();
+            let spikesObject23 = spikesObject6.clone();
+            let spikesObject24 = spikesObject6.clone();
+            let spikesObject25 = spikesObject6.clone();
+            let spikesObject26 = spikesObject6.clone();
+            spikesObject25.remove(spikesObject25.children[0])
+            spikesObject25.children[0].position.z = -1;
+            spikesObject25.children[1].position.z = -2;
+            let spikesObject27 = spikesObject25.clone();
+            let spikesObject28 = spikesObject25.clone();
+            let spikesObject29 = clonnedSpikes.clone();
+            let spikesObject30 = spikesObject6.clone();
+            let spikesObject31 = clonnedSpikes.clone();
+            let spikesObject32 = clonnedSpikes.clone();
+            let spikesObject33 = clonnedSpikes.clone();
+            let spikesObject34 = clonnedSpikes.clone();
+            let spikesObject35 = spikesObject6.clone();
+            let spikesObject36 = clonnedSpikes.clone();
+            let spikesObject37 = clonnedSpikes.clone();
+            let spikesObject38 = clonnedSpikes.clone();
+            let spikesObject39 = clonnedSpikes.clone();
+            let spikesObject40 = clonnedSpikes.clone();
+
+            scene.add(spikesObject2);
+            scene.add(clonnedSpikes);
+            scene.add(spikesObject3);
+            scene.add(spikesObject4);
+            scene.add(spikesObject5);
+            scene.add(spikesObject6);
+            scene.add(spikesObject7);
+            scene.add(spikesObject8);
+            scene.add(spikesObject9);
+            scene.add(spikesObject10);
+            scene.add(spikesObject11);
+            scene.add(spikesObject12);
+            scene.add(spikesObject13);
+            scene.add(spikesObject14);
+            scene.add(spikesObject15);
+            scene.add(spikesObject16);
+            scene.add(spikesObject17);
+            scene.add(spikesObject18);
+            scene.add(spikesObject19);
+            scene.add(spikesObject20);
+            scene.add(spikesObject21);
+            scene.add(spikesObject22);
+            scene.add(spikesObject23);
+            scene.add(spikesObject24);
+            scene.add(spikesObject25);
+            scene.add(spikesObject26);
+            scene.add(spikesObject27);
+            scene.add(spikesObject28);
+            scene.add(spikesObject29);
+            scene.add(spikesObject30);
+            scene.add(spikesObject31);
+            scene.add(spikesObject32);
+            scene.add(spikesObject33);
+            scene.add(spikesObject34);
+            scene.add(spikesObject35);
+            scene.add(spikesObject36);
+            scene.add(spikesObject37);
+            scene.add(spikesObject38);
+            scene.add(spikesObject39);
+            scene.add(spikesObject40);
+            let spikebody = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-1.5, 0.19999598662591353, 45)
+            });
+
+            let spikebody2 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-1.0, 0.19999598662591353, -10)
+            });
+
+            let spikebody3 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-27.7, 0.19999598662591353 , 7)
+            });
+
+            let spikebody4 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-6.5, 0.19999598662591353, 20)
+            });
+
+            let spikebody5 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-32.5, 7, 0)
+            });
+
+            let spikebody6 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-20, 7, 48)
+            });
+
+            let spikebody7 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-40, 7, 46)
+            });
+            let spikebody8 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-14, 7, 43)
+            });
+            let spikebody9 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-30, 7, 43.0)
+            });
+            let spikebody10 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-30, 7, 47.0)
+            });
+
+            let spikebody11 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-55, 7, 43.0)
+            });
+            let spikebody12 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-55, 7, 47.0)
+            });
+
+            let spikebody13 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-14, 7, 13)
+            });
+
+            let spikebody14 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-22.8, 7, 10)
+            });
+            let spikebody15 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-55, 7, 37)
+            });
+            let spikebody16 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-35, 7, 34)
+            });
+            let spikebody17 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-50, 7, 28.5)
+            });
+            let spikebody18 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-30, 7, 28.5)
+            });
+            let spikebody19 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-55, 7, 22)
+            });
+            let spikebody20 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-35, 7, 22)
+            });
+            let spikebody21 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-60, 7, 18)
+            });
+            let spikebody22 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-40, 7, 18)
+            });
+            let spikebody23 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-50, 7, -17.0)
+            });
+            let spikebody24 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-40, 7, -17.0)
+            });
+            let spikebody25 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.0)),
+                position: new THREE.Vector3(-50, 7, -23.3)
+            });
+            let spikebody26 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-40, 7, -22.5)
+            })
+            let spikebody27 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-35, 7, -26.5)
+            })
+            let spikebody28 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-45, 7, -28.3)
+            })
+            let spikebody29 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-60, 7, -33.5)
+            });
+
+            let spikebody30 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-35, 7, -36)
+            });
+
+            let spikebody31 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-50, 7, -36)
+            });
+            let spikebody32 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-50, 7, -42)
+            });
+            let spikebody33 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-40, 7 , -45)
+            });
+            let spikebody34 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-30, 7, -47)
+            });
+            let spikebody35 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
+                position: new THREE.Vector3(-85, 7, 47.5)
+            });
+
+
+            let spikebody36 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-73, 7, -10)
+            });
+
+            let spikebody37 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-85, 7, 10)
+            });
+
+            let spikebody38 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-95, 7, 20)
+            });
+            let spikebody39 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-77.8, 7, 3)
+            });
+            let spikebody40 = new CANNON.Body({
+                mass: 1,
+                shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
+                position: new THREE.Vector3(-68, 7, 8)
+            });
+
+            spikesObject2.position.copy(spikebody2.position);
+            spikesObject2.quaternion.copy(spikebody2.quaternion);
+            spikesObject3.position.copy(spikebody3.position);
+            spikesObject3.quaternion.copy(spikebody3.quaternion);
+            spikesObject4.position.copy(spikebody4.position);
+            spikesObject4.quaternion.copy(spikebody4.quaternion);
+            spikesObject5.position.copy(spikebody5.position);
+            spikesObject5.quaternion.copy(spikebody5.quaternion);
+            spikesObject6.position.copy(spikebody6.position);
+            spikesObject6.quaternion.copy(spikebody6.quaternion);
+            spikesObject7.position.copy(spikebody7.position);
+            spikesObject7.quaternion.copy(spikebody7.quaternion);
+            spikesObject8.position.copy(spikebody8.position);
+            spikesObject8.quaternion.copy(spikebody8.quaternion);
+            spikesObject9.position.copy(spikebody9.position);
+            spikesObject9.quaternion.copy(spikebody9.quaternion);
+            spikesObject10.position.copy(spikebody10.position);
+            spikesObject10.quaternion.copy(spikebody10.quaternion);
+            spikesObject11.position.copy(spikebody11.position);
+            spikesObject11.quaternion.copy(spikebody11.quaternion);
+            spikesObject12.position.copy(spikebody12.position);
+            spikesObject12.quaternion.copy(spikebody12.quaternion);
+            spikesObject13.position.copy(spikebody13.position);
+            spikesObject13.quaternion.copy(spikebody13.quaternion);
+            spikesObject14.position.copy(spikebody14.position);
+            spikesObject14.quaternion.copy(spikebody14.quaternion);
+            spikesObject15.position.copy(spikebody15.position);
+            spikesObject15.quaternion.copy(spikebody15.quaternion);
+            spikesObject16.position.copy(spikebody16.position);
+            spikesObject16.quaternion.copy(spikebody16.quaternion);
+            spikesObject17.position.copy(spikebody17.position);
+            spikesObject17.quaternion.copy(spikebody17.quaternion);
+            spikesObject18.position.copy(spikebody18.position);
+            spikesObject18.quaternion.copy(spikebody18.quaternion);
+            spikesObject19.position.copy(spikebody19.position);
+            spikesObject19.quaternion.copy(spikebody19.quaternion);
+            spikesObject20.position.copy(spikebody20.position);
+            spikesObject20.quaternion.copy(spikebody20.quaternion);
+            spikesObject21.position.copy(spikebody21.position);
+            spikesObject21.quaternion.copy(spikebody21.quaternion);
+            spikesObject22.position.copy(spikebody22.position);
+            spikesObject22.quaternion.copy(spikebody22.quaternion);
+            spikesObject23.position.copy(spikebody23.position);
+            spikesObject23.quaternion.copy(spikebody23.quaternion);
+            spikesObject24.position.copy(spikebody24.position);
+            spikesObject24.quaternion.copy(spikebody24.quaternion);
+            spikesObject25.position.copy(spikebody25.position);
+            spikesObject25.quaternion.copy(spikebody25.quaternion);
+            spikesObject26.position.copy(spikebody26.position);
+            spikesObject26.quaternion.copy(spikebody26.quaternion);
+            spikesObject27.position.copy(spikebody27.position);
+            spikesObject27.quaternion.copy(spikebody27.quaternion);
+            spikesObject28.position.copy(spikebody28.position);
+            spikesObject28.quaternion.copy(spikebody28.quaternion);
+            spikesObject29.position.copy(spikebody29.position);
+            spikesObject29.quaternion.copy(spikebody29.quaternion);
+            spikesObject30.position.copy(spikebody30.position);
+            spikesObject30.quaternion.copy(spikebody30.quaternion);
+            spikesObject31.position.copy(spikebody31.position);
+            spikesObject31.quaternion.copy(spikebody31.quaternion);
+            spikesObject32.position.copy(spikebody32.position);
+            spikesObject32.quaternion.copy(spikebody32.quaternion);
+            spikesObject33.position.copy(spikebody33.position);
+            spikesObject33.quaternion.copy(spikebody33.quaternion);
+            spikesObject34.position.copy(spikebody34.position);
+            spikesObject34.quaternion.copy(spikebody34.quaternion);
+            spikesObject35.position.copy(spikebody35.position);
+            spikesObject35.quaternion.copy(spikebody35.quaternion);
+            spikesObject36.position.copy(spikebody36.position);
+            spikesObject36.quaternion.copy(spikebody36.quaternion);
+            spikesObject37.position.copy(spikebody37.position);
+            spikesObject37.quaternion.copy(spikebody37.quaternion);
+            spikesObject38.position.copy(spikebody38.position);
+            spikesObject38.quaternion.copy(spikebody38.quaternion);
+            spikesObject39.position.copy(spikebody39.position);
+            spikesObject39.quaternion.copy(spikebody39.quaternion);
+            spikesObject40.position.copy(spikebody40.position);
+            spikesObject40.quaternion.copy(spikebody40.quaternion);
+            world.addBody(spikebody)
+            world.addBody(spikebody2)
+            world.addBody(spikebody3)
+            world.addBody(spikebody4)
+            world.addBody(spikebody5)
+            world.addBody(spikebody6)
+            world.addBody(spikebody7)
+            world.addBody(spikebody8)
+            world.addBody(spikebody9)
+            world.addBody(spikebody10)
+            world.addBody(spikebody11)
+            world.addBody(spikebody12)
+            world.addBody(spikebody13)
+            world.addBody(spikebody14)
+            world.addBody(spikebody15)
+            world.addBody(spikebody16)
+            world.addBody(spikebody17)
+            world.addBody(spikebody18)
+            world.addBody(spikebody19)
+            world.addBody(spikebody20)
+            world.addBody(spikebody21)
+            world.addBody(spikebody22)
+            world.addBody(spikebody23)
+            world.addBody(spikebody24)
+            world.addBody(spikebody25)
+            world.addBody(spikebody26)
+            world.addBody(spikebody27)
+            world.addBody(spikebody28)
+            world.addBody(spikebody29)
+            world.addBody(spikebody30)
+            world.addBody(spikebody31)
+            world.addBody(spikebody32)
+            world.addBody(spikebody33)
+            world.addBody(spikebody34)
+            world.addBody(spikebody35)
+            world.addBody(spikebody36)
+            world.addBody(spikebody37)
+            world.addBody(spikebody38)
+            world.addBody(spikebody39)
+            world.addBody(spikebody40)
+            console.log(spikebody40)
+            const boxgeo = new THREE.BoxGeometry((10, 100, 1));
+            const materialGeo = new THREE.MeshBasicMaterial({
+                color: 0xff0080,
+                wireframe: true,
+            });
+            let spikeGeometry = new THREE.Mesh(boxgeo, materialGeo);
+
+            spikeGeometry.position.copy(spikebody4.position);
+            spikeGeometry.quaternion.copy(spikebody4.quaternion);
+            scene.add(spikeGeometry);
 
         }
 
