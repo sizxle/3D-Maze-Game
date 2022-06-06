@@ -18,7 +18,7 @@
         .center {
             margin: 0;
             position: absolute;
-            top: 150%;
+            top: 200%;
             left: 50%;
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -51,17 +51,36 @@
             background-color: #237caa;
             color: #fff;
         }
+        
+        #NAMES {
+            color: gold;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .move {
+            margin: 0;
+            position: fixed;
+            top: 35%;
+            left: 33%;
+        }
     </style>
 </head>
 
 <body>
+    <div class="move">
+        <p id="NAMES">
+            (W,A,S,D = Move, SPACE = Jump, MOUSE = Look).
+            <br>
+            <br>Find Your Way Around The Maze in Time.
+            <br> Else You Have To Restart.
+
+        </p>
+    </div>
+
     <div class="container">
         <div class="center">
-            <button type="button" id="elem" onclick="window.location.href='levelOne.html'">START</button>
-            <button type="button" id="elem" onclick="window.location.href='./helpers/rules.html'">RULES</button>
-            <button type="button" id="elem" onclick="window.location.href='/helpers/mode.html'">SETTINGS</button>
-            <button type="button" id="elem" onclick="window.location.href='./helpers/credits.html'">CREDITS</button>
 
+            <button type="button" id="elem" onclick="window.location.href='../index.html'">EXIT</button>
         </div>
     </div>
 

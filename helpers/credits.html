@@ -18,7 +18,7 @@
         .center {
             margin: 0;
             position: absolute;
-            top: 150%;
+            top: 200%;
             left: 50%;
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -51,17 +51,44 @@
             background-color: #237caa;
             color: #fff;
         }
+        
+        #NAMES {
+            top: 55%;
+            left: 50%;
+            width: 150px;
+            height: 40px;
+            color: gold;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 40px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: x-large;
+            cursor: hand;
+            display: block;
+            margin: 0 0 0.25em;
+        }
+        
+        .move {
+            margin: 0;
+            position: absolute;
+            top: 35%;
+            left: 43%;
+        }
     </style>
 </head>
 
 <body>
+    <div class="move">
+        <p id="NAMES">
+            Thulz_sizwe<br>Tshepiso_Mahoko<br>Zukiswa_zukiswa
+            <br>Sthembizo_Molefi
+        </p>
+    </div>
+
     <div class="container">
         <div class="center">
-            <button type="button" id="elem" onclick="window.location.href='levelOne.html'">START</button>
-            <button type="button" id="elem" onclick="window.location.href='./helpers/rules.html'">RULES</button>
-            <button type="button" id="elem" onclick="window.location.href='/helpers/mode.html'">SETTINGS</button>
-            <button type="button" id="elem" onclick="window.location.href='./helpers/credits.html'">CREDITS</button>
 
+            <button type="button" id="elem" onclick="window.location.href='../index.html'">EXIT</button>
         </div>
     </div>
 

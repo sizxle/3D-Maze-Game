@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>3D maze</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -1422,6 +1423,25 @@
                     controls.getObject().rotation.y = 0;
                     //sphereBody.quaternion.set(0 , 0 , 0 );
                     //console.log(true , sphereBody.position , sphereBody.velocity)
+                    clearInterval(interval);
+                    document.getElementById('count').innerHTML = 'GAME OVER';
+                    // or...
+                    //alert("GAME OVER BABA");
+                    //over.style.display = '';
+                    blocker.style.display = '-webkit-box';
+                    blocker.style.display = '-moz-box';
+                    blocker.style.display = 'box';
+
+                    gameover.style.display = '';
+                    controls.enabled = false;
+                    let reloader = 3;
+                    let relo = setInterval(function() {
+                        reloader--
+                        if (reloader === 0) {
+                            location.reload();
+                        }
+                    }, 1000);
+
                 }
                 // contact.bi and contact.bj are the colliding bodies, and contact.ni is the collision normal.
                 // We do not yet know which one is which! Let's check.
