@@ -1357,19 +1357,19 @@
         }
 
         var dt = 1 / 60;
-        const planeGeo = new THREE.PlaneBufferGeometry(planeSize, planeSize);
-        const planeMat = new THREE.MeshPhongMaterial({
-            map: texture,
-            side: THREE.DoubleSide,
-        });
-        const mes = new THREE.Mesh(planeGeo, planeMat);
-        mesh.receiveShadow = true;
-        mesh.rotation.x = Math.PI * -.5;
-        scene.add(mes);
+        // const planeGeo = new THREE.PlaneBufferGeometry(planeSize, planeSize);
+        // const planeMat = new THREE.MeshPhongMaterial({
+        //     map: texture,
+        //     side: THREE.DoubleSide,
+        // });
+        // const mes = new THREE.Mesh(planeGeo, planeMat);
+        // mesh.receiveShadow = true;
+        // mesh.rotation.x = Math.PI * -.5;
+        // scene.add(mes);
 
-        mes.position.x = -2
-        mes.position.y = 1
-        mes.position.z = 47
+        // mes.position.x = -2
+        // mes.position.y = 1
+        // mes.position.z = 47
 
         function animate() {
 
@@ -1386,7 +1386,7 @@
             if (controls.enabled) {
                 world.step(dt);
             }
-            if (controls.getObject().position.x <= -101) {
+            if (controls.getObject().position.x <= -101 || controls.getObject().position.z <= -49) {
                 //alert("won");
                 clearTimeout(interval);
                 blocker.style.display = '-webkit-box';
