@@ -22,7 +22,7 @@
 
         <div id="nextlevel" style="display:none;">
             <span style="font-size:40px">WON</span>
-            <br/>Level 2 loading
+            <br />Level 2 loading
 
         </div>
 
@@ -33,7 +33,7 @@
 
         <div id="gameover" style="display:none;">
             <span style="font-size:40px">GAMEOVER</span>
-            <br/>Level 1 Reloading in 3sec
+            <br />Level 1 Reloading in 3sec
 
         </div>
 
@@ -48,9 +48,9 @@
     </div>
 
     <script>
-        (function() {
+        (function () {
             var script = document.createElement('script');
-            script.onload = function() {
+            script.onload = function () {
                 var stats = new Stats();
                 document.body.appendChild(stats.dom);
                 requestAnimationFrame(function loop() {
@@ -84,53 +84,53 @@
 
             var element = document.body;
             //if the poiter lock
-            var pointerlockchange = function(event) {
+            var pointerlockchange = function (event) {
 
-                    if (document.pointerLockElement === element || document.mozPointerLockElement === element || document.webkitPointerLockElement === element) {
+                if (document.pointerLockElement === element || document.mozPointerLockElement === element || document.webkitPointerLockElement === element) {
 
-                        controls.enabled = true;
+                    controls.enabled = true;
 
-                        blocker.style.display = 'none';
-                        interval = setInterval(function() {
-                            document.getElementById('count').innerHTML = "Level 1       TIME:" + count;
-                            count--;
-                            if (count === 0) {
-                                clearInterval(interval);
-                                document.getElementById('count').innerHTML = 'GAME OVER';
-                                blocker.style.display = '-webkit-box';
-                                blocker.style.display = '-moz-box';
-                                blocker.style.display = 'box';
+                    blocker.style.display = 'none';
+                    interval = setInterval(function () {
+                        document.getElementById('count').innerHTML = "Level 1       TIME:" + count;
+                        count--;
+                        if (count === 0) {
+                            clearInterval(interval);
+                            document.getElementById('count').innerHTML = 'GAME OVER';
+                            blocker.style.display = '-webkit-box';
+                            blocker.style.display = '-moz-box';
+                            blocker.style.display = 'box';
 
-                                gameover.style.display = '';
-                                controls.enabled = false;
-                                let reloader = 3;
-                                let relo = setInterval(function() {
-                                    reloader--
-                                    if (reloader === 0) {
-                                        location.reload();
-                                    }
-                                }, 1000);
+                            gameover.style.display = '';
+                            controls.enabled = false;
+                            let reloader = 3;
+                            let relo = setInterval(function () {
+                                reloader--
+                                if (reloader === 0) {
+                                    location.reload();
+                                }
+                            }, 1000);
 
-                            }
+                        }
 
-                        }, 1000);
+                    }, 1000);
 
 
-                    } else {
-                        clearTimeout(interval);
-                        controls.enabled = false;
+                } else {
+                    clearTimeout(interval);
+                    controls.enabled = false;
 
-                        blocker.style.display = '-webkit-box';
-                        blocker.style.display = '-moz-box';
-                        blocker.style.display = 'box';
+                    blocker.style.display = '-webkit-box';
+                    blocker.style.display = '-moz-box';
+                    blocker.style.display = 'box';
 
-                        instructions.style.display = '';
-
-                    }
+                    instructions.style.display = '';
 
                 }
-                // if the poiter denied
-            var pointerlockerror = function(event) {
+
+            }
+            // if the poiter denied
+            var pointerlockerror = function (event) {
                 instructions.style.display = '';
             }
 
@@ -143,7 +143,7 @@
             document.addEventListener('mozpointerlockerror', pointerlockerror, false);
             document.addEventListener('webkitpointerlockerror', pointerlockerror, false);
 
-            instructions.addEventListener('click', function(event) {
+            instructions.addEventListener('click', function (event) {
                 instructions.style.display = 'none';
 
                 // Ask the browser to lock the pointer
@@ -151,7 +151,7 @@
 
                 if (/Firefox/i.test(navigator.userAgent)) {
 
-                    var fullscreenchange = function(event) {
+                    var fullscreenchange = function (event) {
 
                         if (document.fullscreenElement === element || document.mozFullscreenElement === element || document.mozFullScreenElement === element) {
 
@@ -380,7 +380,7 @@
 
             var loader = new THREE.TextureLoader();
 
-            loader.load('grass.png', function(texture) {
+            loader.load('grass.png', function (texture) {
                 texture.wrapS = THREE.RepeatWrapping;
                 texture.wrapT = THREE.RepeatWrapping;
                 texture.repeat.set(1000, 1000);
@@ -936,194 +936,208 @@
             let spikebody5 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-32.5, 7, 0)
+                position: new THREE.Vector3(-31.7, 0.19999598662591353, -5)
             });
 
             let spikebody6 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-20, 7, 48)
+                position: new THREE.Vector3(-20, 0.19999598662591353, 47)
             });
 
             let spikebody7 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-40, 7, 46)
+                position: new THREE.Vector3(-40, 0.19999598662591353, 46)
             });
             let spikebody8 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-14, 7, 43)
+                position: new THREE.Vector3(-14, 0.19999598662591353, 43)
             });
             let spikebody9 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-30, 7, 43.0)
+                position: new THREE.Vector3(-30, 0.19999598662591353, 43.0)
             });
             let spikebody10 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-30, 7, 47.0)
+                position: new THREE.Vector3(-30, 0.19999598662591353, 47.0)
             });
 
             let spikebody11 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-55, 7, 43.0)
+                position: new THREE.Vector3(-55, 0.19999598662591353, 43.0)
             });
             let spikebody12 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-55, 7, 47.0)
+                position: new THREE.Vector3(-55, 0.19999598662591353, 47.0)
             });
 
             let spikebody13 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-14, 7, 13)
+                position: new THREE.Vector3(-14, 0.19999598662591353, 13)
             });
 
             let spikebody14 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-22.8, 7, 10)
+                position: new THREE.Vector3(-22.8, 0.19999598662591353, 10)
             });
             let spikebody15 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-55, 7, 37)
+                position: new THREE.Vector3(-60, 0.19999598662591353, 37)
             });
             let spikebody16 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-35, 7, 34)
+                position: new THREE.Vector3(-37, 0.19999598662591353, 34)
             });
             let spikebody17 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-50, 7, 28.5)
+                position: new THREE.Vector3(-50, 0.19999598662591353, 28.5)
             });
             let spikebody18 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-30, 7, 28.5)
+                position: new THREE.Vector3(-12, 0.19999598662591353, 28.5)
             });
             let spikebody19 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-55, 7, 22)
+                position: new THREE.Vector3(-58, 0.19999598662591353, 22)
             });
+
             let spikebody20 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-35, 7, 22)
+                position: new THREE.Vector3(-47, 0.19999598662591353, 22)
             });
             let spikebody21 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-60, 7, 18)
+                position: new THREE.Vector3(-60, 0.19999598662591353, 10)
             });
             let spikebody22 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-40, 7, 18)
+                position: new THREE.Vector3(-40, 0.19999598662591353, 18)
             });
             let spikebody23 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-50, 7, -17.0)
+                position: new THREE.Vector3(-48, 0.19999598662591353, -17.0)
             });
             let spikebody24 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-40, 7, -17.0)
+                position: new THREE.Vector3(-40, 0.19999598662591353, -17.0)
             });
             let spikebody25 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.0)),
-                position: new THREE.Vector3(-50, 7, -23.3)
+                position: new THREE.Vector3(-50, 0.19999598662591353, -23.3)
             });
+
             let spikebody26 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-40, 7, -22.5)
+                position: new THREE.Vector3(-40, 0.19999598662591353, -22.5)
             })
             let spikebody27 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-35, 7, -26.5)
+                position: new THREE.Vector3(-25, 0.19999598662591353, -26.5)
             })
             let spikebody28 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-45, 7, -28.3)
+                position: new THREE.Vector3(-22, 0.19999598662591353, -28.3)
             })
             let spikebody29 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-60, 7, -33.5)
+                position: new THREE.Vector3(-92, 0.19999598662591353, -33.5)
             });
 
             let spikebody30 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-35, 7, -36)
+                position: new THREE.Vector3(-35, 0.19999598662591353, -36.5)
             });
 
             let spikebody31 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-50, 7, -36)
+                position: new THREE.Vector3(-50, 0.19999598662591353, -36)
             });
+
             let spikebody32 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-50, 7, -42)
+                position: new THREE.Vector3(-50, 0.19999598662591353, -42)
             });
             let spikebody33 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-40, 7, -45)
+                position: new THREE.Vector3(-40, 0.19999598662591353, -45)
             });
             let spikebody34 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-30, 7, -47)
+                position: new THREE.Vector3(-30, 0.19999598662591353, -35.5)
             });
             let spikebody35 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(0.15, 0.25, 1.5)),
-                position: new THREE.Vector3(-85, 7, 47.5)
+                position: new THREE.Vector3(-85, 0.19999598662591353, 47.5)
             });
 
 
             let spikebody36 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-73, 7, -10)
+                position: new THREE.Vector3(-73, 0.19999598662591353, -3)
             });
 
             let spikebody37 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-85, 7, 10)
+                position: new THREE.Vector3(-82, 0.19999598662591353, 6.8)
             });
 
             let spikebody38 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-95, 7, 20)
+                position: new THREE.Vector3(-95, 0.19999598662591353, 20)
             });
             let spikebody39 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-77.8, 7, 3)
+                position: new THREE.Vector3(-77.8, 0.19999598662591353, 3.7)
             });
             let spikebody40 = new CANNON.Body({
                 mass: 1,
                 shape: new CANNON.Box(new CANNON.Vec3(1.5, 0.2, 0.5)),
-                position: new THREE.Vector3(-68, 7, 8)
+                position: new THREE.Vector3(-68, 0.19999598662591353, 9)
             });
+
+            const boxgeo = new THREE.BoxGeometry((10, 100, 1));
+            const materialGeo = new THREE.MeshBasicMaterial({
+                color: 0xff0080,
+                wireframe: true,
+            });
+            let spikeGeometry = new THREE.Mesh(boxgeo, materialGeo);
+
+            spikeGeometry.position.copy(spikebody40.position);
+            spikeGeometry.quaternion.copy(spikebody40.quaternion);
+            scene.add(spikeGeometry);
 
             spikesObject2.position.copy(spikebody2.position);
             spikesObject2.quaternion.copy(spikebody2.quaternion);
@@ -1243,17 +1257,9 @@
             world.addBody(spikebody38)
             world.addBody(spikebody39)
             world.addBody(spikebody40)
-            console.log(spikebody40)
-            const boxgeo = new THREE.BoxGeometry((10, 100, 1));
-            const materialGeo = new THREE.MeshBasicMaterial({
-                color: 0xff0080,
-                wireframe: true,
-            });
-            let spikeGeometry = new THREE.Mesh(boxgeo, materialGeo);
 
-            spikeGeometry.position.copy(spikebody2.position);
-            spikeGeometry.quaternion.copy(spikebody2.quaternion);
-            scene.add(spikeGeometry);
+
+
 
         }
 
@@ -1285,7 +1291,7 @@
                 nextlevel.style.display = '';
                 controls.enabled = false;
                 let reloader = 3;
-                let relo = setInterval(function() {
+                let relo = setInterval(function () {
                     reloader--
                     if (reloader === 0) {
                         location.replace("levelTwo.html")
@@ -1295,11 +1301,12 @@
 
 
             }
-            sphereBody.addEventListener("collide", function(e) {
+            //ultimately detect collision between player and obstacle
+            sphereBody.addEventListener("collide", function (e) {
                 var contact = e.contact;
                 console.log(contact.bj.id);
 
-                if (contact.bj.id > 39 && contact.bj.id < 90) {
+                if (contact.bj.id > 32 && contact.bj.id < 73) {
                     sphereBody.position.set(-2, 3, 53);
                     sphereBody.velocity.set(0, 0, 0);
                     controls.getObject().rotation.y = 0;
@@ -1317,7 +1324,7 @@
                     gameover.style.display = '';
                     controls.enabled = false;
                     let reloader = 3;
-                    let relo = setInterval(function() {
+                    let relo = setInterval(function () {
                         reloader--
                         if (reloader === 0) {
                             location.reload();
@@ -1328,8 +1335,6 @@
                 // contact.bi and contact.bj are the colliding bodies, and contact.ni is the collision normal.
                 // We do not yet know which one is which! Let's check.
             });
-
-
 
             controls.update(Date.now() - time);
             renderer.render(scene, camera);
