@@ -1533,8 +1533,6 @@
             world.addBody(spikebody37)
             world.addBody(spikebody38)
             world.addBody(spikebody39)
-            world.addBody(spikebody40)
-            console.log(spikebody40)
             const boxgeo = new THREE.BoxGeometry((10, 100, 1));
             const materialGeo = new THREE.MeshBasicMaterial({
                 color: 0xff0080,
@@ -1593,7 +1591,7 @@
                 var contact = e.contact;
                 console.log(contact.bj.id);
 
-                if (contact.bj.id > 39 && contact.bj.id < 80) {
+                if (contact.bj.id > 57 && contact.bj.id < 98) {
                     sphereBody.position.set(-2, 3, 53);
                     sphereBody.velocity.set(0, 0, 0);
                     controls.getObject().rotation.y = 0;
